@@ -1,1 +1,18 @@
-Forecast for {{city}}
+<div><h1>Daily Forecast for {{city}}</h1></div>
+
+<hr />
+
+<div ng-repeat="weather in dailyWeather.list">
+    <div class="columns">
+        <div class="col-md-2">
+            <div class="panel panel-default" align="center">
+                <div class="panel-heading">
+                    <h4>{{convertToDate(weather.dt) | date: 'MMM d,y'}}</h4>
+                </div>
+                <div class="panel-body">
+                     {{convertToCelsius(weather.temp.day)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
