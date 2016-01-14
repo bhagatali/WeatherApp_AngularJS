@@ -5,6 +5,8 @@
         <h4>{{toDate({dateValue:weatherObject.dt}) | date: dateFormatString}}</h4>
     </div>
     <div class="panel-body">
-         {{toCelsius({tempInKelvin:weatherObject.temp.day})}}
+         <div>{{toCelsius({tempInKelvin:weatherObject.temp.day})}}</div>
+         <br />
+         <div class="text-capitalize">{{weatherObject.weather[0].description}}</div>
     </div>
 </div>
