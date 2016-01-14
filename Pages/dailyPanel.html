@@ -1,0 +1,10 @@
+<div class="panel" align="center"
+     ng-class="{'panel-primary': {{toCelsius({tempInKelvin:weatherObject.temp.day})}} >= 0,
+                'panel-danger' : {{toCelsius({tempInKelvin:weatherObject.temp.day})}} < 0}">
+    <div class="panel-heading">
+        <h4>{{toDate({dateValue:weatherObject.dt}) | date: dateFormatString}}</h4>
+    </div>
+    <div class="panel-body">
+         {{toCelsius({tempInKelvin:weatherObject.temp.day})}}
+    </div>
+</div>

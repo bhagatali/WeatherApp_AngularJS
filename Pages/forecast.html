@@ -14,15 +14,10 @@
 <div ng-repeat="weather in dailyWeather.list">
     <div class="columns">
         <div class="col-md-2">
-            <div class="panel" ng-class="{'panel-primary': {{convertToCelsius(weather.temp.day)}} > 0,
-                                          'panel-danger' : {{convertToCelsius(weather.temp.day)}} <= 0}" align="center">
-                <div class="panel-heading">
-                    <h4>{{convertToDate(weather.dt) | date: 'MMM d, y'}}</h4>
-                </div>
-                <div class="panel-body">
-                     {{convertToCelsius(weather.temp.day)}}
-                </div>
-            </div>
+            <daily-weather date-format-string="MMM d, y"
+                           weather-object="weather" 
+                           to-celsius="convertToCelsius(tempInKelvin)"
+                           to-date="convertToDate(dateValue)"></daily-weather>
         </div>
     </div>
 </div>
