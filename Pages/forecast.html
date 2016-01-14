@@ -17,7 +17,11 @@
             <daily-weather date-format-string="MMM d, y"
                            weather-object="weather" 
                            to-celsius="convertToCelsius(tempInKelvin)"
-                           to-date="convertToDate(dateValue)"></daily-weather>
+                           to-date="convertToDate(dateValue)">
+                <!-- Transclusion ** Inserting this piece of document into the document that 
+                     custom directive daily-weather is going to return back -->
+                <div>Humidity: {{weather.humidity}}</div>
+            </daily-weather>
         </div>
     </div>
 </div>

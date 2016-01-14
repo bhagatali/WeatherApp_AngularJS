@@ -8,5 +8,9 @@
          <div>{{toCelsius({tempInKelvin:weatherObject.temp.day})}}</div>
          <br />
          <div class="text-capitalize">{{weatherObject.weather[0].description}}</div>
+         
+         <!-- This directive below will allow transclusion-->
+         <br />
+         <small><ng-transclude></ng-transclude></small>
     </div>
 </div>

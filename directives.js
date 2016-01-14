@@ -8,5 +8,6 @@ weatherApp.directive('dailyWeather',function(){
             weatherObject:'=',
             toCelsius:'&',
             toDate:'&'
-        }       
+        },
+        transclude:true
 }});
