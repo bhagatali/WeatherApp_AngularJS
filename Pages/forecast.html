@@ -1,13 +1,23 @@
+<style type="text/css">
+   body { background: silver !important; }
+</style>
+
 <div><h1>Daily Forecast for {{city}}</h1></div>
 
 <hr />
 
+<h3>Switch: <a href="#/forecast/2" ng-class="{'bg-primary': {{days}} === 2}">2 Days</a> |
+            <a href="#/forecast/5" ng-class="{'bg-primary': {{days}} === 5}">5 Days</a> | 
+            <a href="#/forecast/7" ng-class="{'bg-primary': {{days}} === 7}">7 Days</a> </h3>
+
+<hr />
 <div ng-repeat="weather in dailyWeather.list">
     <div class="columns">
         <div class="col-md-2">
-            <div class="panel panel-default" align="center">
+            <div class="panel" ng-class="{'panel-primary': {{convertToCelsius(weather.temp.day)}} > 0,
+                                          'panel-danger' : {{convertToCelsius(weather.temp.day)}} <= 0}" align="center">
                 <div class="panel-heading">
-                    <h4>{{convertToDate(weather.dt) | date: 'MMM d,y'}}</h4>
+                    <h4>{{convertToDate(weather.dt) | date: 'MMM d, y'}}</h4>
                 </div>
                 <div class="panel-body">
                      {{convertToCelsius(weather.temp.day)}}
